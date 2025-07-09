@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-md bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold">Secure Password Generator</h1>
+                <i class="fas fa-lock text-xl"></i>
+            </div>
+            <p class="text-blue-100 mt-2 text-sm">Create strong, random passwords instantly</p>
+        </div>
+        
+        <div class="p-6">
+            <div class="relative mb-6">
+                <input 
+                    type="text" 
+                    id="password-output" 
+                    class="w-full p-4 pr-12 bg-gray-50 border border-gray-200 rounded-lg text-gray-700 font-mono focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    readonly
+                    placeholder="Your password will appear here"
+                >
+                <button 
+                    id="copy-btn" 
+                    class="copy-btn absolute right-3 top-1/2 transform -translate-y-1/2 bg-blue-100 hover:bg-blue-200 text-blue-700 p-2 rounded-md"
+                    title="Copy to clipboard"
+                >
+                    <i class="fas fa-copy copy-icon"></i>
+                </button>
+            </div>
+            
+            <div class="mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <label for="length-slider" class="text-gray-700 font-medium">Password Length: <span id="length-value" class="text-blue-600">12</span></label>
+                </div>
+                <input 
+                    type="range" 
+                    id="length-slider" 
+                    min="4" 
+                    max="32" 
+                    value="12" 
+                    class="slider w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                >
+            </div>
+            
+            <div class="space-y-3 mb-6">
+                <div class="checkbox-container flex items-center">
+                    <input type="checkbox" id="uppercase" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="uppercase" class="checkbox-label ml-2 text-sm font-medium text-gray-700 cursor-pointer">Include Uppercase Letters (A-Z)</label>
+                </div>
+                <div class="checkbox-container flex items-center">
+                    <input type="checkbox" id="lowercase" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="lowercase" class="checkbox-label ml-2 text-sm font-medium text-gray-700 cursor-pointer">Include Lowercase Letters (a-z)</label>
+                </div>
+                <div class="checkbox-container flex items-center">
+                    <input type="checkbox" id="numbers" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="numbers" class="checkbox-label ml-2 text-sm font-medium text-gray-700 cursor-pointer">Include Numbers (0-9)</label>
+                </div>
+                <div class="checkbox-container flex items-center">
+                    <input type="checkbox" id="symbols" checked class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                    <label for="symbols" class="checkbox-label ml-2 text-sm font-medium text-gray-700 cursor-pointer">Include Symbols (!@#$%^&*)</label>
+                </div>
+            </div>
+            
+            <div class="mb-6">
+                <label class="text-gray-700 font-medium block mb-2">Password Strength:</label>
+                <div class="flex items-center">
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mr-3">
+                        <div id="strength-meter" class="password-strength h-2.5 rounded-full bg-gray-400"></div>
+                    </div>
+                    <span id="strength-text" class="text-sm font-medium">Medium</span>
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="generate-btn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-sync-alt mr-2"></i> Generate Password
+                </button>
+                <button id="save-btn" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
+                    <i class="fas fa-save mr-2"></i> Save Password
+                </button>
+            </div>
+        </div>
+        
+        <div class="bg-gray-50 px-6 py-4 border-t border-gray-200">
+            <div class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-shield-alt mr-2 text-blue-500"></i>
+                <span>Your passwords are generated locally and never stored.</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

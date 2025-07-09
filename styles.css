@@ -1,0 +1,29 @@
+.password-strength {
+    height: 4px;
+    transition: all 0.3s ease;
+}
+.copy-btn:hover .copy-icon {
+    transform: scale(1.1);
+}
+.copy-icon {
+    transition: transform 0.2s ease;
+}
+.checkbox-container:hover .checkbox-label {
+    color: #3b82f6;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+}
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+}
