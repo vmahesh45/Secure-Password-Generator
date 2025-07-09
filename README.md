@@ -1,5 +1,4 @@
-# Secure-Password-Generator
-# Secure-Password-Generator
+
 # 🔐 Secure Password Generator
 
 A modern, responsive, and easy-to-use web application to generate strong, secure passwords instantly. Users can customize password length and choose which character sets (uppercase, lowercase, numbers, symbols) to include.
